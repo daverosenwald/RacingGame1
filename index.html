@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="score-container">
+            Score: <span id="score">0</span>
+            <span class="score-divider">|</span>
+            High Score: <span id="high-score">0</span>
+            <span class="score-divider">|</span>
+            Multiplier: <span id="multiplier">x1</span>
+            <span class="score-divider">|</span>
+            <i class="fas fa-drumstick-bite nugget-icon"></i> <span id="nugget-count">0</span>
+            <span class="score-divider">|</span>
+            <i class="fas fa-bone finger-icon"></i> <span id="finger-count">0</span>
+        </div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        
+        <button id="mute-button" class="control-button">
+            <i class="fas fa-volume-up" id="volume-icon"></i>
+        </button>
+        
+        <!-- Game menu container for start/restart buttons -->
+        <div id="game-menu">
+            <div id="start-screen" class="menu-screen">
+                <h2>River Adventure</h2>
+                <p>High Score: <span id="start-high-score">0</span></p>
+                <div class="instructions">
+                    <h3>How to Play:</h3>
+                    <p><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> - Move left/right</p>
+                    <p><i class="fas fa-arrow-up"></i> <i class="fas fa-arrow-down"></i> or W/S - Move up/down & control speed</p>
+                    <p><i class="fas fa-drumstick-bite nugget-icon"></i> Nuggets: +10 points</p>
+                    <p><i class="fas fa-bone finger-icon"></i> Fingers: +25 points & 3-second speed boost!</p>
+                </div>
+                <button id="start-button" class="game-button">Start Journey</button>
+            </div>
+            
+            <div id="game-over-screen" class="menu-screen">
+                <h2>You Sank!</h2>
+                <p>Your score: <span id="final-score">0</span></p>
+                <p>High score: <span id="game-over-high-score">0</span></p>
+                <p>Nuggets: <span id="final-nugget-count">0</span> | Fingers: <span id="final-finger-count">0</span></p>
+                <div class="tip">
+                    <p>Tip: Use <i class="fas fa-arrow-up"></i> or W to row faster and collect more chicken!</p>
+                </div>
+                <button id="restart-button" class="game-button">Sail Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio elements -->
+    <audio id="background-music" loop>
+        <source src="https://assets.codepen.io/21542/howler-demo-bg-music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="crash-sound">
+        <source src="https://assets.codepen.io/21542/howler-demo-crash.mp3" type="audio/mp3">
+    </audio>
+    <audio id="collect-sound">
+        <source src="https://assets.codepen.io/21542/howler-demo-success.mp3" type="audio/mp3">
+    </audio>
+    
+    <script src="game.js"></script>
+</body>
+</html>
